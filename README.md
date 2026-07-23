@@ -117,19 +117,6 @@ Rejects invalid landlines or malformed strings while validating 10-digit Mobilis
 
 ---
 
-## 🚀 Localhost Server Control Scripts (`server_control/`)
-
-A dedicated `server_control/` directory is provided for instant double-click management:
-
-- **`server_control/Start_Server.bat`** (or **`تشغيل_السيرفر.bat`**):
-  - Automatically verifies `node_modules` presence (runs `npm install` if missing).
-  - Starts Next.js development server (`npm run dev`).
-  - Launches `http://localhost:3000` automatically in your web browser.
-- **`server_control/Stop_Server.bat`** (or **`إيقاف_السيرفر.bat`**):
-  - Terminates the server process listening on Port 3000.
-
----
-
 ## 💻 Local Installation & Setup Guide
 
 ### 1. Clone Repository & Install Dependencies
@@ -174,7 +161,3 @@ All 5 E2E Automated Test Suites have passed with a **100% Success Rate**:
 - **Suite 4: Admin Control Panel**: PASSED (Gate 0–3, Optimistic UI, & SHA-256 Auth Guard verified).
 - **Suite 5: UI/UX & Resilience**: PASSED (RTL alignment, touch targets $\ge 44\text{px}$, Skeleton loaders, & ErrorBoundaries verified).
 
----
-
-## 📄 License
-This project is open-source under the [MIT License](LICENSE).
