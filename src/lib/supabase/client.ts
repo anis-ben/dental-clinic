@@ -1,12 +1,12 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+// Default to project credentials so Netlify & Vercel deployments fetch Supabase data seamlessly
+const supabaseUrl =
+  process.env.NEXT_PUBLIC_SUPABASE_URL ||
+  'https://dvqxknpvhstqqlrkxvbt.supabase.co';
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  console.warn(
-    'Supabase URL or Anon Key is missing. Please set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY in .env.local'
-  );
-}
+const supabaseAnonKey =
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR2cXhrbnB2aHN0cXFscmt4dmJ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ4MjA2OTMsImV4cCI6MjEwMDM5NjY5M30.89s-pYvV76mg1nfhKw5H37KoXVyUeOwoeopn1dO1lt8';
 
-export const supabase = createClient(supabaseUrl || 'https://placeholder.supabase.co', supabaseAnonKey || 'placeholder-key');
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);
